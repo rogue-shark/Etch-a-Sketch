@@ -31,11 +31,13 @@ body{
     background-color: teal;
     border: 3px rgb(4, 40, 40) solid;
     width: 500px;
-    padding: 2em 0;
+    padding: 1em 0;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 button{
+    margin: .7em;
     padding: 1em;
     background-color: wheat;
     font-weight: bold;

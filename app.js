@@ -29,18 +29,27 @@ function gridGenerator(gridValue) {
     }
 }
 
-
-///styling event target
-function changeColor(e) {
-    
-     e.target.style.backgroundColor = colorGenerator()
+// choices from inline onclicks => changing the current value
+function currColor (choice) {
+    color = choice
 }
 
-function colorGenerator() {
+///changing pen color according to current color 
+function changeColor() {
+    if (color === 'random'){
+        this.style.backgroundColor = randcolorGenerator()
+    }else{
+        this.style.backgroundColor = color
+    }
+}
+
+// rainbow effect generator
+function randcolorGenerator() {
     const r = Math.floor(Math.random() * 255)
     const b = Math.floor(Math.random() * 255)
     const g = Math.floor(Math.random() * 255)  
     return `rgb(${r}, ${g}, ${b})`
 }
 
+//clear container div
 function clearFunc() {container.innerHTML = ''}
