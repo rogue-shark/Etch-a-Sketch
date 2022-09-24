@@ -1,14 +1,14 @@
-<h1 align="center"></h1>
+<h1 align="center">Etch-A-Sketch</h1>
 
 
 
 <div align="center">
   <h3>
-    <a href="">
+    <a href="https://rogue-shark.github.io/Etch-a-Sketch">
       D E M O
     </a>
     <span> | </span>
-    <a href="">
+    <a href="https://github.com/rogue-shark/Etch-a-Sketch">
       Solution
   </h3>
 </div>
