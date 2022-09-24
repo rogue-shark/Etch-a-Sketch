@@ -1,34 +1,46 @@
-const type1Btn = document.querySelector('.type-1-btn');
 const container = document.querySelector('.container');
 const clearBtn = document.querySelector('.clear');
+const buttons = document.querySelectorAll('#grid-btn')
 
+let color = 'black'
 
+//grid buttons value select
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        gridGenerator(button.value)  
+        console.log(button.value)    
+    })
+});
 
-type1Btn.addEventListener('click', () => {
-    gridGenerator()
-    console.log(type1Btn.value)
-} )
 
 clearBtn.addEventListener('click', clearFunc)
 
-function gridGenerator() {
-    container.style.gridTemplateColumns = 'repeat(16, 1fr)'
-    container.style.gridTemplateRows = 'repeat(16, 1fr)'
+//generating grid according to "button.value"
+function gridGenerator(gridValue) {
+    container.style.gridTemplateColumns = `repeat(${gridValue}, 1fr)`
+    container.style.gridTemplateRows = `repeat(${gridValue}, 1fr)`
     clearFunc()
-    for(let i=0; i < 16 * 16; i++) {
+    for(let i=0; i < gridValue * gridValue; i++) {
         const gridEle = document.createElement('div')
         gridEle.classList.add('grid-element')
-        gridEle.style.backgroundColor = 'red'
+        gridEle.style.backgroundColor = 'white'
         gridEle.addEventListener('mouseover', changeColor)
         container.appendChild(gridEle)
     }
 }
 
-//styling targeted event
+
+///styling event target
 function changeColor(e) {
-    if ( e.type === 'mouseover'){
-        e.target.style.backgroundColor = 'black'
-    }
+    
+     e.target.style.backgroundColor = colorGenerator()
+}
+
+function colorGenerator() {
+    const r = Math.floor(Math.random() * 255)
+    const b = Math.floor(Math.random() * 255)
+    const g = Math.floor(Math.random() * 255)  
+    return `rgb(${r}, ${g}, ${b})`
 }
 
 function clearFunc() {container.innerHTML = ''}

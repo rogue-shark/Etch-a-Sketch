@@ -5,6 +5,7 @@
 }
 
 body{
+    background-color: rgb(252, 249, 249);
     margin: 0;
     font-family: 'Roboto mono', sans-serif;
     display: flex;
@@ -23,5 +24,24 @@ body{
 }
 
 .grid-element{
-    transition: .3s ease-in;
+    transition: .2s ease-in;
+}
+
+.controller{
+    background-color: teal;
+    border: 3px rgb(4, 40, 40) solid;
+    width: 500px;
+    padding: 2em 0;
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    padding: 1em;
+    background-color: wheat;
+    font-weight: bold;
+}
+
+button#clr{
+    background-color: rgb(204, 77, 30);
+    color: white;
 }
